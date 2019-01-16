@@ -1,0 +1,16 @@
+name: jurgens
+dependencies:
+  - python==2.7.15
+  - joblib
+  - scikit-learn<0.18
+  - ftfy==4.4.3
+  - nltk
+  - gensim
+  - matplotlib
+  - pandas
+  - pip:
+    - pycorenlp==0.2.0
+    - fuzzywuzzy[speedup]
+    - unicodecsv
+    - beautifulsoup4
+    - imbalanced-learn<=0.2
