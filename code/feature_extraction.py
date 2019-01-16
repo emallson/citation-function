@@ -27,6 +27,7 @@ import math
 from difflib import SequenceMatcher
 from pycorenlp import StanfordCoreNLP
 from fuzzywuzzy import fuzz
+import gzip
 
 from gensim.corpora.dictionary import Dictionary
 from gensim.models.ldamodel import LdaModel
@@ -44,8 +45,8 @@ PAPER_TO_PAGE_RANK = defaultdict(Counter)
 PAPER_TO_HUB = defaultdict(Counter)
 PAPER_TO_AUTHORITY = defaultdict(Counter)
 PAPER_TO_LOAD_CENTRALITY = defaultdict(Counter)
-#with open('../resources/arc-paper-to-temporal-weight.2.tsv') as fh:
-with open('../working-files/arc-network-weights.tsv') as f:
+#  with open('../resources/arc-paper-to-temporal-weight.2.tsv') as fh:
+with gzip.open('../resources/arc-network-weights.tsv.gz') as f:
 
     for line_no, line in enumerate(f):
         # Skip header
@@ -73,7 +74,7 @@ WORD_TO_VEC = {} # defaultdict(lambda: [ random.random(), random.random() ])
 
 if True:
     # Use a pre-processed subset that contains only those words in the ARC
-    with open('../resources/glove.840B.300d.ARC-subset.txt') as f:
+    with open('../resources/glove.840B.300d.txt') as f:
         print 'Loading GloVe vectors'
         line_no = 0
         for line in f:

@@ -82,9 +82,9 @@ citation_id_to_topic_vecs = {}
 
 num_topics = 100
 
-with open('../working-files/topics3/%d-topics/citance.doc-topics.txt' % num_topics) as citance_topic_f:
-    with open('../working-files/topics3/%d-topics/extended-citance.doc-topics.txt' % num_topics) as extended_topic_f:
-        with open('../working-files/context-ids.tsv') as f:
+with open('../working-dir/topics/citance.doc-topics.txt') as citance_topic_f:
+    with open('../working-dir/topics/extended-citance.doc-topics.txt') as extended_topic_f:
+        with open('../working-dir/topics/context-ids.tsv') as f:
             for line_no, line in enumerate(f):
                 cols = line[:-1].split('\t')
                 citation_id = cols[2]
